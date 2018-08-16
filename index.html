@@ -1,103 +1,41 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Room </title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.0.4/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <!-- <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script> -->
-    <script defer src="/__/firebase/5.0.4/firebase-database.js"></script>
-    <!-- <script defer src="/__/firebase/5.0.4/firebase-messaging.js"></script> -->
-    <!-- <script defer src="/__/firebase/5.0.4/firebase-storage.js"></script> -->
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-    <script src="chat.js"></script>
-
-    <style>
-      .centered {
-        position: absolute;
-        top: 69%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
-
-      .btn {
-          border: none;
-          padding: 14px 28px;
-          font-size: 20px;
-          cursor: pointer;
-          background-color: white; 
-          color: black; 
-          border: 2px solid #008CBA;
-      }
-
-      .btn:hover{
-        background-color: #008CBA;
-        color: white;;
-      }
-      
-      body {
-        font:24px arial;
-        color: #222;
-        text-align:center;
-        padding:35px; 
-      }
-      
-      #chatbox {
-        text-align:left;
-        margin:0 auto;
-        margin-bottom:25px;
-        padding:10px;
-        background:#fff;
-        height:270px;
-        width:430px;
-        border:1px solid #ACD8F0;
-        overflow:auto; 
-      }
-
-      #text { 
-        font:20px arial; 
-        padding: 14px 28px;
-        background-color: rgb(140, 173, 184);
-        color: white;
-      }
-      #nickname{
-        font:24px arial; 
-        padding: 1px 1px;
-        border:  #ACD8F0;
-      }
-
-    </style>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title> Room </title>
+  
+      <!-- update the version number as needed -->
+      <script defer src="/__/firebase/5.0.4/firebase-app.js"></script>
+      <!-- include only the Firebase features as you need -->
+      <!-- <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script> -->
+      <script defer src="/__/firebase/5.0.4/firebase-database.js"></script>
+      <!-- <script defer src="/__/firebase/5.0.4/firebase-messaging.js"></script> -->
+      <!-- <script defer src="/__/firebase/5.0.4/firebase-storage.js"></script> -->
+      <!-- initialize the SDK after all desired features are loaded -->
+      <script defer src="/__/firebase/init.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+      <script>  
+        var config = {
+          apiKey: "AIzaSyC_ja4BLA-MpOBYWGdOY52XdJ0No7fWE7E",
+          authDomain: "sumyachat.firebaseapp.com",
+          databaseURL: "https://sumyachat.firebaseio.com",
+          projectId: "sumyachat",
+          storageBucket: "sumyachat.appspot.com",
+          messagingSenderId: "1088077260110"
+        };
+        firebase.initializeApp(config);
+      </script>
+    <link rel="stylesheet" href="loginstyle.css">
+    <script src="login.js"></script>
   </head>
   <body>
-    <span style="font-family:Wingdings"> WelcomE </span>
-    <div>
-      <p>
-        Your current nickname is
-      </p>
-      <p><input type="text" id="nickname" value="Human"></p>
-      <button type="button" id="change" class="btn" onclick="change()">click here to change your nickname</button>
-    </div>
-    <div class="centered">
-      <div class="main" id="chatbox">
-        <ol id="list"></ol>
-      </div>
-        <input type="text" id="text">
-        <button id="btn" onclick="submit()" class="btn info"> send </button>
-        <script>
-          var input = document.getElementById("text");
-          input.addEventListener("keyup", function(event) {
-              event.preventDefault();
-              if (event.keyCode === 13) {
-                  document.getElementById("btn").click();
-              }
-          }); 
-      </script>
-    </div>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <button onclick="login()">sign in</button>
+    <button onclick="signup()"> sign up</button>
   </body>
 </html>

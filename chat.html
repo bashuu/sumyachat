@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Room </title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.0.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <!-- <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script> -->
+    <script defer src="/__/firebase/5.0.4/firebase-database.js"></script>
+    <!-- <script defer src="/__/firebase/5.0.4/firebase-messaging.js"></script> -->
+    <!-- <script defer src="/__/firebase/5.0.4/firebase-storage.js"></script> -->
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script src="chat.js"></script>
+
+    <link rel="stylesheet" href="chatstyle.css">
+
+  </head>
+  <body>
+
+    <span style="font-family:Wingdings"> WelcomE </span>
+    <div>
+      <p>Your current nickname is </p>
+
+      <p><input type="text" id="nickname" value="Human"></p>
+
+      <button type="button" id="change" class="btn" onclick="change()">click here to change your nickname</button>
+    </div>
+
+    <div class="centered">
+      <div class="main" id="chatbox">
+        <ol id="list"></ol>
+      </div>
+
+      <input type="text" id="text">
+      <button id="btn" onclick="submit()" class="btn info"> send </button>
+
+      <script>
+        var input = document.getElementById("text");
+        input.addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("btn").click();
+            }
+        }); 
+      </script>
+    </div>
+  </body>
+</html>
