@@ -1,6 +1,15 @@
+var config = {
+    apiKey: "AIzaSyC_ja4BLA-MpOBYWGdOY52XdJ0No7fWE7E",
+    authDomain: "sumyachat.firebaseapp.com",
+    databaseURL: "https://sumyachat.firebaseio.com",
+    projectId: "sumyachat",
+    storageBucket: "sumyachat.appspot.com",
+    messagingSenderId: "1088077260110"
+  };
+firebase.initializeApp(config);
+
 var db = firebase.database();
 var password = null;
-var URl = window.location.href;
 
 function login(){
     var userId = document.getElementById('uname').value;
@@ -10,10 +19,11 @@ function login(){
     password = snapshot.val();
 
     if (password === curPsw){
-        console.log(URl);
+        localStorage.nickname = userId;
+        window.location = 'chat.html';
     }
     else
-        console.log(password);
+        console.log('error');
     });
 
     password = null;
