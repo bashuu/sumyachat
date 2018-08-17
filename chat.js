@@ -12,6 +12,11 @@ var db = firebase.database();
 var ref = db.ref('chat');
 var counter = 0;
 
+function checkLogedIn(){
+  if(localStorage.nickname === "Human")
+    window.location = "index.html";
+}
+
 ref.on('value', function(data){
   var list = [];
   var i = 0;
@@ -62,4 +67,9 @@ function submit(){
   x = localStorage.nickname + " : " + x;
   pushdata(x);
   document.getElementById("text").value = "";
+}
+
+function logout(){
+  localStorage.nickname = "Human";
+  window.location = "index.html";
 }

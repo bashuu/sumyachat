@@ -8,21 +8,20 @@
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/5.0.4/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <!-- <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script> -->
+    <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.0.4/firebase-database.js"></script>
-    <!-- <script defer src="/__/firebase/5.0.4/firebase-messaging.js"></script> -->
-    <!-- <script defer src="/__/firebase/5.0.4/firebase-storage.js"></script> -->
+    <script defer src="/__/firebase/5.0.4/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.0.4/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 
+    
     <script src="chat.js"></script>  
-        
     <link rel="stylesheet" href="chatstyle.css">
     
-</head>
-<body>
-    <script src="global.js"></script>
+  </head>
+  <body onload="checkLogedIn()">
 
     <div class="centered">
       <div class="main" id="chatbox">
@@ -40,5 +39,6 @@
           }); 
       </script>
     </div>
+    <button onclick="logout()">log out</button>
   </body>
 </html>

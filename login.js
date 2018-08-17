@@ -11,6 +11,13 @@ firebase.initializeApp(config);
 var db = firebase.database();
 var password = null;
 
+function checkLogedIn(){
+    if(localStorage.nickname == "Human")
+        console.log("loging in");
+    else
+        window.location = "chat.html";
+}
+
 function login(){
     var userId = document.getElementById('uname').value;
     var curPsw = document.getElementById('psw').value;
