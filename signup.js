@@ -12,23 +12,41 @@ var db = firebase.database();
 var password = null;
 
 function signup(){
-    if(checkPswMatch()){
-        window.location = "chat.html";
-        registerUser();
+    if (checkUserNameExist()){
+        checkPswMatch();
     }
     else{
-        document.getElementById("pswError").style.display = "block"
+        document.getElementById("uNameError").style.display = "block";
+        return;
     }
+    
+}
+
+function checkUserNameExist(){
+    var userId = document.getElementById('uName').value
+    var password
+    db.ref('users/' + userId + '/password').once('value').then(function(snapshot) {
+        password = snapshot.val();
+        console.log(password);
+        if (password)
+            return false;
+        else
+            document.getElementById("uNameError").style.display = "block"
+    });
+    return true;
 }
 
 function checkPswMatch(){
     var psw = document.getElementById('psw').value;
     var rPsw = document.getElementById('rPsw').value;
     
-    if (psw === rPsw)
-    return true;
-    
-    return false;
+    if (psw === rPsw){
+        window.location = "chat.html";
+        registerUser();
+    }
+    else{
+        document.getElementById("pswError").style.display = "block"
+    }
 }
 
 function registerUser(){
