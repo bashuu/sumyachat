@@ -70,6 +70,6 @@ function submit(){
 }
 
 function logout(){
-  localStorage.nickname = "Human";
+  localStorage.clear();
   window.location = "index.html";
 }

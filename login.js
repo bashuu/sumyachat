@@ -12,10 +12,11 @@ var db = firebase.database();
 var password = null;
 
 function checkLogedIn(){
-    if(localStorage.nickname == "Human")
-    console.log("loging in");
+    if(localStorage.nickname == null){
+        return;
+    }
     else
-    window.location = "chat.html";
+        window.location = "chat.html";
 }
 
 function login(){
