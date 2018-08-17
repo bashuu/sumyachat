@@ -17,28 +17,29 @@
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 
     
-    <script src="chat.js"></script>  
     <link rel="stylesheet" href="chatstyle.css">
     
   </head>
   <body onload="checkLogedIn()">
-
-    <div class="centered">
-      <div class="main" id="chatbox">
-        <ol id="list"></ol>
-      </div>
+      <div>your are loged in as </div>
+      <p id="uName"></p>
+      <div class="centered">
+        <div class="main" id="chatbox">
+          <ol id="list"></ol>
+        </div>
         <input type="text" id="text">
         <button id="btn" onclick="submit()" class="btn info"> send </button>
         <script>
           var input = document.getElementById("text");
           input.addEventListener("keyup", function(event) {
-              event.preventDefault();
-              if (event.keyCode === 13) {
-                  document.getElementById("btn").click();
-              }
+            event.preventDefault();
+            if (event.keyCode === 13) {
+              document.getElementById("btn").click();
+            }
           }); 
-      </script>
+          </script>
     </div>
     <button onclick="logout()">log out</button>
+    <script src="chat.js"></script>  
   </body>
 </html>

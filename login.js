@@ -12,9 +12,8 @@ var db = firebase.database();
 var password = null;
 
 function checkLogedIn(){
-    if(localStorage.nickname == null){
+    if(localStorage.nickname == null)
         return;
-    }
     else
         window.location = "chat.html";
 }

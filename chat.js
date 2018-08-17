@@ -11,10 +11,13 @@ firebase.initializeApp(config);
 var db = firebase.database();
 var ref = db.ref('chat');
 var counter = 0;
+document.getElementById('uName').innerHTML = localStorage.nickname;
 
 function checkLogedIn(){
-  if(localStorage.nickname === "Human")
+  if(localStorage.nickname == null)
     window.location = "index.html";
+  else
+    return
 }
 
 ref.on('value', function(data){
