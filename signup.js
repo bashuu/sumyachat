@@ -17,6 +17,7 @@ function signup(){
         registerUser();
     }
     else{
+        document.getElementById("pswError").style.display = "block"
     }
 }
 

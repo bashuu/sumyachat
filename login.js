@@ -29,8 +29,9 @@ function login(){
             localStorage.nickname = userId;
             window.location = 'chat.html';
         }
-        else
-        console.log('error');
+        else{
+            document.getElementById("error").style.display = "block"
+        }   
     });
     
     password = null;
