@@ -12,14 +12,7 @@ var db = firebase.database();
 var password = null;
 
 function signup(){
-    if (checkUserNameExist()){
-        console.log("hi");
-    }
-    else{
-        document.getElementById("uNameError").style.display = "block";
-        return;
-    }
-    checkPswMatch();
+    checkUserNameExist()
     
 }
 
@@ -28,13 +21,15 @@ function checkUserNameExist(){
     var password
     db.ref('users/' + userId + '/password').once('value').then(function(snapshot) {
         password = snapshot.val();
-        console.log(password);
-    });
-    if (!password && userId){
         // console.log(password);
-        return true;
-    }       
-    return false;
+        if (!password && userId){
+            checkPswMatch();
+        }      
+        else{
+            document.getElementById("uNameError").style.display = "block";
+            return
+        }
+    });
 }
 
 function checkPswMatch(){
