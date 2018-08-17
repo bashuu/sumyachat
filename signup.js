@@ -13,12 +13,13 @@ var password = null;
 
 function signup(){
     if (checkUserNameExist()){
-        checkPswMatch();
+        console.log("hi");
     }
     else{
         document.getElementById("uNameError").style.display = "block";
         return;
     }
+    checkPswMatch();
     
 }
 
@@ -28,12 +29,12 @@ function checkUserNameExist(){
     db.ref('users/' + userId + '/password').once('value').then(function(snapshot) {
         password = snapshot.val();
         console.log(password);
-        if (password)
-            return false;
-        else
-            document.getElementById("uNameError").style.display = "block"
     });
-    return true;
+    if (!password && userId){
+        // console.log(password);
+        return true;
+    }       
+    return false;
 }
 
 function checkPswMatch(){
