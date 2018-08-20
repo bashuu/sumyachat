@@ -10,7 +10,7 @@ firebase.initializeApp(config);
 
 var input = document.getElementById("text");
 var db = firebase.database();
-var ref = db.ref('chat');
+var ref = db.ref('chat/' + 'messeges');
 var counter = 0;
 var chatbox = document.getElementById("chatbox");
 var count_2 = 0;
@@ -62,10 +62,6 @@ ref.on('value', function(data){
     count_2++;
   }
 });
-
-function change(){
-  nickname = document.getElementById("nickname").value;
-}
 
 function pushdata(x){
   var data = {
