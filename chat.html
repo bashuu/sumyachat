@@ -21,20 +21,21 @@
     
   </head>
   <body onload="checkLogedIn()">
-      <div>your are loged in as </div>
-        <p id="uName"></p>
+      <div id="title">your are loged in as 
+        <b id="uName"></b>
+      </div>
 
       <div class="centered">
         <div class="main" id="chatbox">
           <ol id="list"></ol>
-      </div>
+        </div>
 
         <input type="text" id="text">
         <button id="btn" onclick="submit()" class="btn info"> send </button>
 
     </div>
 
-    <button class="btn" onclick="logout()">log out</button>
+    <button id="logoutBtn" class="btn" onclick="logout()">log out</button>
     <script src="chat.js"></script>  
   </body>
 </html>

@@ -41,3 +41,4 @@ function login(){
 function signup(){
     window.location = "signup.html";
 }
+

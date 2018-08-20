@@ -13,9 +13,10 @@ var db = firebase.database();
 var ref = db.ref('chat');
 var counter = 0;
 var chatbox = document.getElementById("chatbox");
-
+var count_2 = 0;
 
 document.getElementById('uName').innerHTML = localStorage.nickname;
+
 
 function checkLogedIn(){
   if(localStorage.nickname == null)
@@ -44,11 +45,12 @@ ref.on('value', function(data){
       var element = document.getElementById('list');
       element.appendChild(p);
       chatbox.scrollTop = chatbox.scrollHeight;
+      document.getElementsByTagName("P")[count_2].setAttribute("class", "chatText"); 
+      count_2++;
     } 
     counter++;
 
   }else{
-    
     var j = list_keys[list_keys.length - 1];              
     var p = document.createElement('P');
     var val = document.createTextNode(list[j].text);
@@ -56,6 +58,8 @@ ref.on('value', function(data){
     var element = document.getElementById('list');
     element.appendChild(p)
     chatbox.scrollTop = chatbox.scrollHeight;
+    document.getElementsByTagName("P")[count_2].setAttribute("class", "chatText"); 
+    count_2++;
   }
 });
 

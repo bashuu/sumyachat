@@ -1,6 +1,6 @@
 .centered { 
   position: absolute;
-  top: 69%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -21,8 +21,14 @@
   color: white;;
 }
 
+.chatText{
+  border-left: 6px solid;
+  background-color: rgba(146, 178, 189, 0.329);
+  border-left-color: #008CBA;
+}
+
 body {
-  font:24px arial;
+  font:arial;
   color: #222;
   text-align:center;
   padding:35px; 
@@ -34,9 +40,9 @@ body {
   margin-bottom:25px;
   padding:10px;
   background:#fff;
-  height:270px;
+  height:300px;
   width:430px;
-  border:1px solid #ACD8F0;
+  border:3px solid #ACD8F0;
   overflow:auto; 
 }
 
@@ -50,4 +56,21 @@ body {
   font:24px arial; 
   padding: 1px 1px;
   border:  #ACD8F0;
+}
+
+#title{
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  text-align: center;
+  font: 24px arial;
+  color: #008CBA;
+}
+
+#logoutBtn{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
