@@ -1,53 +1,53 @@
-      .centered { 
-        position: absolute;
-        top: 69%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
+.centered { 
+  position: absolute;
+  top: 69%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-      .btn {
-          border: none;
-          padding: 14px 28px;
-          font-size: 20px;
-          cursor: pointer;
-          background-color: white; 
-          color: black; 
-          border: 2px solid #008CBA;
-      }
+.btn {
+    border: none;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
 
-      .btn:hover{
-        background-color: #008CBA;
-        color: white;;
-      }
-      
-      body {
-        font:24px arial;
-        color: #222;
-        text-align:center;
-        padding:35px; 
-      }
-      
-      #chatbox {
-        text-align:left;
-        margin:0 auto;
-        margin-bottom:25px;
-        padding:10px;
-        background:#fff;
-        height:270px;
-        width:430px;
-        border:1px solid #ACD8F0;
-        overflow:auto; 
-      }
+.btn:hover{
+  background-color: #008CBA;
+  color: white;;
+}
 
-      #text { 
-        font:20px arial; 
-        padding: 14px 28px;
-        background-color: rgb(140, 173, 184);
-        color: white;
-      }
-      #nickname{
-        font:24px arial; 
-        padding: 1px 1px;
-        border:  #ACD8F0;
-      }
+body {
+  font:24px arial;
+  color: #222;
+  text-align:center;
+  padding:35px; 
+}
+
+#chatbox {
+  text-align:left;
+  margin:0 auto;
+  margin-bottom:25px;
+  padding:10px;
+  background:#fff;
+  height:270px;
+  width:430px;
+  border:1px solid #ACD8F0;
+  overflow:auto; 
+}
+
+#text { 
+  font:20px arial; 
+  padding: 14px 28px;
+  background-color: rgb(140, 173, 184);
+  color: white;
+}
+#nickname{
+  font:24px arial; 
+  padding: 1px 1px;
+  border:  #ACD8F0;
+}

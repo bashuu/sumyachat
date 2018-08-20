@@ -13,7 +13,6 @@ var password = null;
 
 function signup(){
     checkUserNameExist()
-    
 }
 
 function checkUserNameExist(){

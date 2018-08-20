@@ -22,24 +22,19 @@
   </head>
   <body onload="checkLogedIn()">
       <div>your are loged in as </div>
-      <p id="uName"></p>
+        <p id="uName"></p>
+
       <div class="centered">
         <div class="main" id="chatbox">
           <ol id="list"></ol>
-        </div>
+      </div>
+
         <input type="text" id="text">
         <button id="btn" onclick="submit()" class="btn info"> send </button>
-        <script>
-          var input = document.getElementById("text");
-          input.addEventListener("keyup", function(event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-              document.getElementById("btn").click();
-            }
-          }); 
-          </script>
+
     </div>
-    <button onclick="logout()">log out</button>
+
+    <button class="btn" onclick="logout()">log out</button>
     <script src="chat.js"></script>  
   </body>
 </html>
