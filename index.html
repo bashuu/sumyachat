@@ -8,7 +8,7 @@
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/5.0.4/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <!-- <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script> -->
+    <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script>
     <script defer src="/__/firebase/5.0.4/firebase-database.js"></script>
     <!-- <script defer src="/__/firebase/5.0.4/firebase-messaging.js"></script> -->
     <!-- <script defer src="/__/firebase/5.0.4/firebase-storage.js"></script> -->
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="loginstyle.css">
     
   </head>
-  <body onload="checkLogedIn()">
+  <body>
       <label for="uname" class="text"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
       
@@ -29,6 +29,8 @@
       
       <button onClick="login()" id="btn">sign in</button>
       <button onClick="signup()"> sign up</button>
+
+      <script src="app.js"></script>
       <script src="login.js"></script>
     </body>
 </html>

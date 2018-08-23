@@ -1,61 +1,51 @@
-var config = {
-    apiKey: "AIzaSyC_ja4BLA-MpOBYWGdOY52XdJ0No7fWE7E",
-    authDomain: "sumyachat.firebaseapp.com",
-    databaseURL: "https://sumyachat.firebaseio.com",
-    projectId: "sumyachat",
-    storageBucket: "sumyachat.appspot.com",
-    messagingSenderId: "1088077260110"
-  };
-firebase.initializeApp(config);
-
-var db = firebase.database();
-var password = null;
-
 function signup(){
-    checkUserNameExist()
-}
-
-function checkUserNameExist(){
-    var userId = document.getElementById('uName').value
-    var password
-    db.ref('users/' + userId + '/password').once('value').then(function(snapshot) {
-        password = snapshot.val();
-        // console.log(password);
-        if (!password && userId){
-            checkPswMatch();
-        }      
-        else{
-            document.getElementById("uNameError").style.display = "block";
-            return
-        }
-    });
+    checkPswMatch()
 }
 
 function checkPswMatch(){
+    var nickname = document.getElementById('uName').value
     var psw = document.getElementById('psw').value;
     var rPsw = document.getElementById('rPsw').value;
     
     if (psw === rPsw){
-        window.location = "chat.html";
         registerUser();
+    }else if(nickname == null){
+        document.getElementById("error").innerHTML = "enter Nickname"
+        document.getElementById("error").style.display = "block"
     }
-    else{
-        document.getElementById("pswError").style.display = "block"
+    else {
+        document.getElementById("error").innerHTML = "Password doesn't match"
+        document.getElementById("error").style.display = "block"
     }
 }
 
 function registerUser(){
-    var uName = document.getElementById('uName').value;
+    var email = document.getElementById('email').value;
     var psw = document.getElementById('psw').value;
-    
-    db.ref('users/' + uName).set({
-        password : psw
-    });
-    localStorage.nickname = uName;
+    auth.createUserWithEmailAndPassword(email, psw).catch(function(error){
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        document.getElementById("error").innerHTML = errorMessage;
+        document.getElementById("error").style.display = "block";
+    })
 }
 
 function cancel(){
     window.location = "index.html";
 }
+
+auth.onAuthStateChanged(function(user) {
+    if (user) {
+        nickname = document.getElementById('uName').value;
+        db.ref('users/' + user.uid).set({
+            nickname : nickname
+        })
+        window.location = "chat.html";
+    } else {
+      // No user is signed in.
+    }
+});
+
 
 

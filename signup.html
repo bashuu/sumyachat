@@ -20,19 +20,23 @@
     
     </head>
     <body>
-        <p class="text">Username</p>
-        <input id="uName" type="text" placeholder="Enter Username">
-        <div id="uNameError" style="display: none" >Username Exists</div>
+        <form>
+            <p class="text">Email</p>
+            <input id="email" type="text" placeholder="enter Email">
 
-        <p class="text">Password</p>
-        <input id="psw" type="password" placeholder="Enter Password">
-        
-        <p class="text">Repeat Password</p>
-        <input id="rPsw" type="password" placeholder="Repeat Password">
-        <div id="pswError" style="display: none" >Password doesn't match</div>
+            <p class="text">Username</p>
+            <input id="uName" type="text" placeholder="Enter Username">
+            
+            <p class="text">Password</p>
+            <input id="psw" type="password" placeholder="Enter Password">
+            
+            <p class="text">Repeat Password</p>
+            <input id="rPsw" type="password" placeholder="Repeat Password">
+            <div id="error" style="display: none" >Password doesn't match</div>
+        </form>
         <button onclick="signup()" id="btn">Sign up</button>
         <button onclick="cancel()">Cancel</button>
-
+        <script src="app.js"></script>
         <script src="signup.js"></script>
   </body>
 </html>

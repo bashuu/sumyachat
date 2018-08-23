@@ -1,29 +1,19 @@
-var config = {
-  apiKey: "AIzaSyC_ja4BLA-MpOBYWGdOY52XdJ0No7fWE7E",
-  authDomain: "sumyachat.firebaseapp.com",
-  databaseURL: "https://sumyachat.firebaseio.com",
-  projectId: "sumyachat",
-  storageBucket: "sumyachat.appspot.com",
-  messagingSenderId: "1088077260110"
-};
-firebase.initializeApp(config);
-
 var input = document.getElementById("text");
-var db = firebase.database();
 var ref = db.ref('chat/' + 'messeges');
 var counter = 0;
 var chatbox = document.getElementById("chatbox");
 var count_2 = 0;
 
-document.getElementById('uName').innerHTML = localStorage.nickname;
-
-
-function checkLogedIn(){
-  if(localStorage.nickname == null)
-    window.location = "index.html";
-  else
-    return
-}
+auth.onAuthStateChanged(user => {
+  if (user){
+    db.ref('users/' + user.uid  + '/nickname').once('value').then(function(snapshot){
+      nickname = snapshot.val();
+      document.getElementById("uName").innerHTML = nickname;
+    });
+  }else{
+    window.location = "index.html"
+  }
+});
 
 ref.on('value', function(data){
   var list = [];
@@ -71,17 +61,18 @@ function pushdata(x){
 }
 
 function submit(){
-  var x = document.getElementById("text").value;
+  var x = input.value;
   counter += 1;
-  x = localStorage.nickname + " : " + x;
+  x = nickname + " : " + x;
   pushdata(x);
-  document.getElementById("text").value = "";
+  input.value = "";
 }
 
 function logout(){
-  localStorage.clear();
+  auth.signOut();
   window.location = "index.html";
 }
+
 
 input.addEventListener("keyup", function(event) {
   event.preventDefault();
