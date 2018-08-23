@@ -20,22 +20,28 @@
     <link rel="stylesheet" href="chatstyle.css">
     
   </head>
-  <body>
-    <div id="title">your are loged in as 
-      <b id="uName"></b>
+  <body onload="load()">
+    <div id="loader"></div>
+    
+    <div style="display:none;" id="mainDiv" class="animate-bottom">
+
+      <div id="title">your are loged in as 
+        <b id="uName"></b>
+      </div>
+      
     </div>
 
     <div class="centered">
       <div class="main" id="chatbox">
         <ol id="list"></ol>
       </div>
-
+      
       <input type="text" id="text">
       <button id="btn" onclick="submit()" class="btn info"> send </button>
-
+      
     </div>
-
     <button id="logoutBtn" class="btn" onclick="logout()">log out</button>
+      
     <script src="app.js"></script>
     <script src="chat.js"></script> 
   </body>

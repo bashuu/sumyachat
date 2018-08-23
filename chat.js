@@ -73,6 +73,14 @@ function logout(){
   window.location = "index.html";
 }
 
+function load() {
+  var load = setTimeout(showPage, 2500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("mainDiv").style.display = "block";
+}
 
 input.addEventListener("keyup", function(event) {
   event.preventDefault();
