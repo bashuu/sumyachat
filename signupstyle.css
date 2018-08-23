@@ -22,7 +22,7 @@ hr {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #008CBA;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -34,4 +34,9 @@ button {
 
 button:hover {
     opacity:1;
+}
+
+.text{
+    color: #008CBA;
+    font:20px arial;
 }

@@ -1,0 +1,32 @@
+[debug] [2018-08-23T02:04:02.143Z] ----------------------------------------------------------------------
+[debug] [2018-08-23T02:04:02.150Z] Command:       /usr/bin/node /usr/local/bin/firebase serve
+[debug] [2018-08-23T02:04:02.151Z] CLI Version:   4.1.1
+[debug] [2018-08-23T02:04:02.151Z] Platform:      linux
+[debug] [2018-08-23T02:04:02.151Z] Node Version:  v8.10.0
+[debug] [2018-08-23T02:04:02.151Z] Time:          Thu Aug 23 2018 10:04:02 GMT+0800 (+08)
+[debug] [2018-08-23T02:04:02.152Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-23T02:04:02.259Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-23T02:04:02.260Z] > authorizing via signed-in user
+[debug] [2018-08-23T02:04:02.266Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-08-23T02:04:02.267Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-08-23T02:04:02.768Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-23T02:04:03.107Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/sumyachat  
+ 
+[debug] [2018-08-23T02:04:04.800Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-23T02:04:04.803Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/sumyachat/tokens  
+ 
+[debug] [2018-08-23T02:04:05.824Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-23T02:04:05.826Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/sumyachat  
+ 
+[debug] [2018-08-23T02:04:06.342Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/baskhuu/Documents/project-1'...
+[info] 
+[debug] [2018-08-23T02:04:06.348Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1088077260110/clients/_:getWebAppConfig  
+ 
+[debug] [2018-08-23T02:04:07.256Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
